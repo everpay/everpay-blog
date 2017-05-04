@@ -1,7 +1,7 @@
 # Site settings
-title: Antonio Trento, theme Jeky New Age, the start Bootstrap themplate build for jekyll
+title: Everpay, the payments start up
 email:
-description: A jekyll template for landing pages, portfolio and blogging
+description:Everpay makes everday commerce a simple process and is also a provider of payment management solutions.
 
 baseurl: "" # the subpath of your site, e.g. /blog/ (If you use organization leave empty)
 url: "https://jekynewage.github.io" # the base hostname & protocol for your site
@@ -11,21 +11,23 @@ data-ad-slot: 2973388149
 data-ad-client: ca-pub-9204963049240271
 google_ad_client: ca-pub-9204963049240271
 
-google_analytics: "UA-86331249-1"
+google_analytics: "UA-2221655-42"
 addthis_id: ra-5644da281510c62f
-disqus_account: jeky-new-age
+disqus_account: everpay
 
 # Social networks usernames (many more available: flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.) see all icon at fontawesome.io
 social:
   - title: twitter
-    url: https://twitter.com/lantoniotrento
+    url: https://twitter.com/everpay
   - title: facebook
-    url: https://facebook.com/lantoniotrento
+    url: https://facebook.com/everpay
   - title: google-plus
-    url: https://plus.google.com/+AntoniotrentoIt
-  #- title: github
-  #  url: http://github.com/jekyll
-
+    url: https://plus.google.com/+Everpay
+  - title: github
+    url: http://github.com/everpay
+  - title: linkedin
+    url: http://linkedin.com/company/everpay
+    
 # Build settings
 markdown: kramdown
 highlighter: rouge
