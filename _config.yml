@@ -1,7 +1,7 @@
 # Site settings
 title: Everpay, the payments start up
 email:
-description:Everpay makes everday commerce a simple process and is also a provider of payment management solutions.
+description: Everpay makes everday commerce a simple process and is also a provider of payment management solutions.
 
 baseurl: "" # the subpath of your site, e.g. /blog/ (If you use organization leave empty)
 url: "https://everpay.github.io" # the base hostname & protocol for your site
