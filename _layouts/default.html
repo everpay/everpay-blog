@@ -4,16 +4,485 @@
 <!--[if IE 8 ]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9 ]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-{% include head.html %}
+<link rel="canonical" href="http://everpayinc.com/">
+	{% feed_meta %}
+<meta property="og:title" content="Everpay">
+<meta property="og:type" content="blog">
+<meta property="og:url" content="http://everpayinc.com/">
+<meta property="og:image" content="https://cdn.everpayinc.com/assets/img/logo.png">
+<meta property="og:site_name" content="Everpay">
+<meta property="og:description" content="Commerce Made Simple">
+<meta property="fb:app_id" content="">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Everpay">
+<meta name="twitter:description" content="Commerce Made Simple">
+<meta name="twitter:image" content="https://cdn.everpayinc.com/assets/img/logo.png">
+<meta name="google-site-verification" content="">
+<meta name="google-site-verification" content="">
+<meta name="google-analytics" content="UA-2221655-42">
+<meta itemprop="image" content="https://cdn.everpayinc.com/assets/img/logo.png">
+	{% seo %}
 
-<body id="page-top">
-  {% include nav-blog.html %}
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+	<link rel="icon" type="image/png" href="/favicon.png">
+	
+    <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+	
+  
+  <!-- Plugin Stylesheets -->
+  
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  	<link rel="stylesheet" href="https://cdn.everpayinc.com/assets/css/simple-line-icons.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.everpayinc.com/assets/css/plugins/owl-carousel/owl.carousel.min.css">
+  	<link rel="stylesheet" href="https://cdn.everpayinc.com/assets/css/plugins/owl-carousel/owl.theme.default.min.css">
+  	<link rel="stylesheet" href="https://cdn.everpayinc.com/assets/css/plugins/owl-carousel/owl.carousel.custom.css">
+  	<link rel="stylesheet" href="https://cdn.everpayinc.com/assets/css/plugins/devices/devices.min.css">
+    <link rel="stylesheet" href="https://cdn.everpayinc.com/assets/css/plugins/magnific-popup/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.everpayinc.com/assets/css/plugins/aos/aos.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.everpayinc.com/assets/css/plugins/loaders-css/loaders.min.css" type="text/css">
+	
+	<link rel="stylesheet" href="https://cdn.everpayinc.com/assets/css/everpay-v1.2.css" type="text/css">
 
-  {{ content }}
+	
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  {% include footer.html %}
-  {% include scripts.html %}
-</body>
 
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+
+
+    <!-- Page Preloader (only used on index pages) -->
+
+    <div class="tp--preloader">
+       <div class="tp--spinner loader">
+        <div class="loader-inner ball-beat">
+          <div></div><div></div><div></div>
+        </div>
+       </div>
+    </div>
+
+<header class="tp--header tp--header-fixed tp--header-shrink tp--header-1">
+
+  {% include navigation.html %}
+
+    </header>
+
+	{{ content }}
+			<footer class="hidden">
+			<div class="container">
+					<div class="footer-columns">
+					{% for column in site.data.footer %}
+					<ul class="footer-links">
+						{% for link in column.links %}
+							<li><a {% if link.new_window %}target="_blank"{% endif %} href="{% include relative-src.html src=link.link %}" {% if link.social_icon %}class="{{ link.social_icon }}-icon"{% endif %}>
+								{% if link.social_icon %}
+									{% include social-icon.html icon=link.social_icon %}
+								{% endif %}
+								{{ link.name }}</a></li>
+						{% endfor %}
+					</ul>
+					{% endfor %}
+				</div>
+				<p class="copyright">&copy; {{ site.time | date: '%Y' }} MyApp Ltd. • <a href="#">Terms</a> &amp; <a href="#">Privacy</a> • <a href="https://cloudcannon.com/">Template by CloudCannon</a></p>
+			</div>
+		</footer>
+		
+
+
+<section class="tp--section tp--cta tp--cta-2 tp--section-light">
+
+      <div class="container">
+        
+        <div class="row tp--col-sm-vertical-align">
+
+          <div class="col-sm-8">
+            <p>Join thousands of businesses worldwide and solve your payments problem today.</p>
+          </div>
+          <div class="col-sm-4">
+            <p><a href="#modal-register" class="btn btn-primary btn-lg popup-modal">Get Started Free</a></p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+    
+    <!-- Footer ==================================== -->
+    
+    <footer id="footer" class="tp--footer tp--section-dark tp--gradient-22 tp--footer-1 text-xs-center">
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-sm-3 col-md-3">
+
+            <h3>Product</h3>
+            <ul class="list-unstyled">
+              <li><a href="pricing/">Pricing</a></li>
+              <li><a href="/testimonailas/">Testimonials</a></li>
+              <li><a href="/#">Download</a></li>           
+            </ul>
+
+          </div>
+
+          <div class="col-sm-3 col-md-3">
+
+            <h3>Company</h3>
+            <ul class="list-unstyled">
+              <li><a href="/about/">About Us</a></li>
+              <li><a href="contact/">Contact Us</a></li>
+              <li><a href="careers/">Jobs&emsp;<span class="label label-primary">We're hiring!</span></a></li>           
+            </ul>
+
+          </div>
+
+          <div class="col-sm-3 col-md-3">
+
+            <h3>Legal</h3>
+            <ul class="list-unstyled">
+              <li><a href="terms/">Terms of Service</a></li>
+              <li><a href="privacy/">Privacy Policy</a></li>
+              <li><a href="security/">Security Policy</a></li>             
+            </ul>
+
+          </div>
+
+          <div class="col-sm-3 col-md-3">
+
+            <h3>Contact us</h3>
+            <p>156 King Street,</p>
+            <p>Toronto, ON, CA</p>
+            <br>+1 (800) 566-6003</p>
+          </div>
+
+        </div>
+
+        <div class="row tp--social hidden">
+          <div class="col-lg-12 text-center">
+            <a class="icon" href="//twitter.com/everpay" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a class="icon" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a class="icon" href="../../../../dribbble.com/dparrelli" target="_blank"><i class="fa fa-dribbble"></i></a>
+            <a class="icon" href="../../../../healthcoach.io" target="_blank"><i class="fa fa-globe"></i></a>
+          </div>
+        </div>
+
+      </div>
+      
+      
+<div class="tp--section-dark copyright-footer">
+       <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+                 <p class="muted copyright">&copy; {{ site.time | date: '%Y' }}  Everpay Corp •</p>
+          </div>
+           <div class="col-lg-4 tp--social text-center">
+            <a class="icon" href="//twitter.com/everpay" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a class="icon" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a class="icon" href="../../../../dribbble.com/dparrelli" target="_blank"><i class="fa fa-dribbble"></i></a>
+            <a class="icon" href="../../../../healthcoach.io" target="_blank"><i class="fa fa-globe"></i></a>
+           </div>
+               
+                <div class="col-lg-4 text-center">
+                    
+                    </div>
+                    
+            </div>
+              </div>
+                </div>
+
+    </footer>
+
+    
+    <!-- Login Form -->
+
+    <div id="modal-login" class="tp--authentication text-center white-popup mfp-hide">
+
+      <section class="tp--authentication-container">
+
+        <div class="page-header">
+          <h3>Login to your account</h3>
+        </div>
+
+        <div class="row">
+          
+          <div class="col-sm-12">
+
+            <form id="form_login" class="form-authentication">
+
+              <div class="row tp--social-login hidden">
+                  
+                <div class="col-xs-4">
+                    <a title="Facebook" class="btn btn-signup tp--facebook fa fa-facebook" href="#"></a>
+                </div>
+            
+                <div class="col-xs-4">
+                    <a title="LinkedIn" class="btn btn-signup tp--linkedin fa fa-linkedin" href="#"></a>
+                </div>
+            
+                <div class="col-xs-4">
+                    <a title="Twitter" class="btn btn-signup tp--twitter fa fa-twitter" href="#"></a>
+                </div>
+                
+                <div class="col-xs-12">
+                    <p class="divider">or</p>
+                </div>
+
+              </div>
+          
+
+              <div class="form-group">
+                  <i class="icon-envelope"></i>
+                  <input class="form-control" id="id_login" name="login" value="" placeholder="Enter your email" type="email">
+              </div>
+
+              <div class="form-group">
+                  <i class="icon-lock"></i>
+                  <input class="form-control" id="id_password" name="password" placeholder="Enter your password" type="password">
+              </div>
+
+              <input class="button" name="commit" type="submit" value="Login">
+
+              <div class="tp--authentication-footer">
+                <p class="links clearfix">
+                  <a class="pull-left" href="#">Don't have an account? Sign up</a>
+                  <a class="pull-right" href="#">Forgot your password?</a>
+                </p>
+              </div>
+                
+            </form>
+
+          </div>
+
+        </div>
+        
+       </section>
+      
+    </div>
+
+
+    <!-- Registration Form -->
+
+    <div id="modal-register" class="tp--authentication text-center white-popup mfp-hide">
+
+      <section class="tp--authentication-container">
+
+        <div class="page-header">
+          <h3>Register a new account</h3>
+        </div>
+
+        <div class="row">
+          
+          <div class="col-sm-12">
+
+            <form id="form_register" class="form-authentication">
+
+              <div class="row tp--social-login hidden">
+                  
+                <div class="col-xs-4">
+                    <a title="Facebook" class="btn btn-signup tp--facebook fa fa-facebook" href="#"></a>
+                </div>
+            
+                <div class="col-xs-4">
+                    <a title="LinkedIn" class="btn btn-signup tp--linkedin fa fa-linkedin" href="#"></a>
+                </div>
+            
+                <div class="col-xs-4">
+                    <a title="Twitter" class="btn btn-signup tp--twitter fa fa-twitter" href="#"></a>
+                </div>
+                
+                <div class="col-xs-12">
+                    <p class="divider">or</p>
+                </div>
+
+              </div>
+          
+
+              <div class="form-group">
+                  <i class="icon-envelope"></i>
+                  <input class="form-control" id="id_register" name="login" value="" placeholder="Enter your email" type="email">
+              </div>
+
+              <div class="form-group">
+                  <i class="icon-lock"></i>
+                  <input class="form-control" id="id_password" name="password" placeholder="Enter your password" type="password">
+              </div>
+
+              <div class="form-group">
+                  <i class="icon-lock"></i>
+                  <input class="form-control" id="id_password_reenter" name="password_reenter" placeholder="Re-enter your password" type="password">
+              </div>
+
+              <input class="button" name="commit" type="submit" value="Register your account">
+
+              <div class="tp--authentication-footer">
+                <p class="disclaimer">By registering an account, you agree with our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+                <p class="links">
+                  <a class="" href="#">Already have an account? Login</a>
+                </p>
+              </div>
+                
+            </form>
+
+          </div>
+
+        </div>
+        
+       </section>
+      
+    </div>
+
+
+    <!-- Contact Form -->
+
+    <div id="modal-contact" class="tp--contact text-center white-popup mfp-hide">
+
+      <div class="page-header">
+        <h3>Get in touch</h3>
+        <p>Feel free to get in touch with us by sending your message below.</p>
+      </div>
+
+
+      <form id="contact-form" method="post" action="contact-form/contact.php" role="form">
+
+        <div class="messages"></div>
+
+        <div class="controls">
+
+          <div class="row">
+              <div class="col-md-12">
+
+                <label for="form_name">Full Name *</label>
+                
+                <div class="row">
+                  
+                <div class="col-md-6">
+
+                  <div class="form-group">
+                    <label for="form_lastname" class="sr-only">First Name *</label> 
+                    <input id="form_name" type="text" name="name" class="form-control" placeholder="First name" required="required">
+                    <div class="help-block with-errors"></div>
+                  </div>
+
+                </div>
+
+                <div class="col-md-6">
+
+                  <div class="form-group">
+                      <label for="form_lastname" class="sr-only">Last Name *</label>
+                      <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Last name" required="required">
+                      <div class="help-block with-errors"></div>
+                  </div>
+
+                </div>
+
+                </div>
+                  
+              </div>
+              
+          </div>
+
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="form-group">
+                      <label for="form_email">Email *</label>
+                      <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email" required="required">
+                      <div class="help-block with-errors"></div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="form-group">
+                      <label for="form_message">Message *</label>
+                      <textarea id="form_message" name="message" class="form-control" placeholder="Please enter your message" rows="4" required="required"></textarea>
+                      <div class="help-block with-errors"></div>
+                  </div>
+              </div>
+              <div class="col-md-12 text-center">
+                  <input type="submit" class="btn btn-primary btn-lg btn-circular btn-send" value="Send your message">
+              </div>
+          </div>
+
+        </div>
+
+      </form>
+      
+    </div>
+    
+    
+    <!-- Page Plugins -->
+    <script src="https://cdn.everpayinc.com/assets/js/plugins/classie/classie.js"></script>
+    <script src="https://cdn.everpayinc.com/assets/js/plugins/owl-carousel/owl.carousel.min.js"></script>
+    <script src="https://cdn.everpayinc.com/assets/js/plugins/isotope/isotope.pkgd.min.js"></script>
+    <script src="https://cdn.everpayinc.com/assets/js/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="https://cdn.everpayinc.com/assets/js/plugins/modernizr/modernizr-custom.js"></script>
+    <script src="https://cdn.everpayinc.com/assets/js/plugins/aos/aos.js"></script>
+    <script src="https://cdn.everpayinc.com/assets/js/plugins/jquery-validate/jquery.validate.min.js"></script>
+    <script src="https://cdn.everpayinc.com/assets/js/plugins/loaders-css/loaders.css.js"></script>
+
+    <!-- Site Javascript -->
+    <script src="https://cdn.everpayinc.com/assets/js/everpay-main.js"></script>
+	
+		<script>
+			document.getElementById("open-nav").onclick = function () {
+				document.body.classList.toggle("nav-open");
+				return false;
+			};
+		</script>
+		
+		{% if jekyll.environment == 'production' and site.google_analytics_key != '' %}
+		<script>
+			(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,"script","//www.google-analytics.com/analytics.js","ga");
+
+			ga("create", "{{ site.UA-2221655-42 }}", "auto");
+			ga("send", "pageview");
+		</script>
+		<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', '{{ site.UA-2221655-42 }}']); //2221655-42
+_gaq.push(['_trackPageview']);
+_gaq.push(['_trackPageLoadTime']);
+
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!--End Analytics Code-->
+	{% endif %}
+
+		
+	</body>
 </html>
